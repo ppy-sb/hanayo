@@ -12,6 +12,7 @@
 				the current RAP's sidebar.
 			*/}}
 		{{ else }}
+			{{ navbarItem .Path (.T "主页") "/" }}
 			{{ navbarItem .Path (.T "排行榜") "/leaderboard" }}
 			<div class="ui dropdown item">
 				<span>{{ .T "帮助" }}</span>
