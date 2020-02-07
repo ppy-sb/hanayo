@@ -37,7 +37,7 @@ MinPrivileges=2
 					{{ if has .Context.User.Privileges 4 }}
 						<h3 class="ui header">{{ .T "自定义奖章" }}</h3>
 						<div class="ui warning message">
-							{{ .T "<b>请合理使用它</b> 如果你滥用它，你会失去使用它的资格。" | html}}
+							{{ .T "<b>请合理使用</b>" | html}}
 						</div>
 						<div class="ui toggle checkbox">
 							<input type="checkbox" name="custom_badge.show" {{ if $d.custom_badge.show }}checked{{ end }}>
