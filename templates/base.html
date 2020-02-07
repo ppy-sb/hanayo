@@ -89,6 +89,16 @@
 		<div class="footer">
 			{{ .T "&copy; 2020-%d ppy.sb, 基于 Hanayo by Ripple." (curryear) | html }}
 		</div>
+		<script>
+			var hanayoConf = {
+				avatars:   {{ .Conf.AvatarURL }},
+				banchoAPI: {{ .Conf.BanchoAPIPublic }},
+				baseAPI:   {{ .Conf.BaseAPIPublic }},
+				cheesegullAPI: {{ .Conf.CheesegullAPI }},
+				language:  {{ "en" }},
+			};
+			var currentUserID = {{ .Context.User.ID }};
+		</script>
 		{{/* If we got some more scripts to print, print'em */}}
 		<script src="//twemoji.maxcdn.com/2/twemoji.min.js?2.2"></script>
 		<script src="/static/dist.min.js?{{ unixNano }}"></script>
