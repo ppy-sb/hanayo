@@ -9,7 +9,6 @@ HeadingOnRight=true
 	<div class="ui raised segments">
 		<div class="ui segment">
 			{{ $username := .RequestInfo.Username }}
-			<img src="/static/jack_black.jpg" class="ui small right floated image" alt="Jack black">
 			<p>{{ .T "%s，好久不见，本服禁止小号。" $username }}</p>
 			<p style="margin-bottom:40px;">
 				<a href="/register?stopsign=1" class="camouflaged">{{ .T "如果你想让你的账号消失，你可以继续注册" }}</a> 
