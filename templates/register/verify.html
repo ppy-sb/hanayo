@@ -1,26 +1,25 @@
 {{ define "tpl" }}
 <div class="ui container">
 	<div class="ui segment">
-		{{ .T "Your account has been created, however it still <b>needs to be verified!</b> Please log in into <b><u>osu! (the game)</u></b> using your account. <b>There is <u>no email confirmation</u> at the moment. All you need to do is connect to Ripple from the osu! client!</b> If you're having trouble, <a href='/doc/1'>follow this guide</a>." | html }}
+		{{ .T "恭喜，你的账号已经成功创建了。但是和官服一样，你需要从游戏里登录来<b>激活<b/>它" | html }}
 	</div>
 	<div class="ui centered error  message">
-		{{ .T "<b class='big text'>Do not let anyone except yourself log into your Ripple account!</b><br> Get on our <a href='%s'>Discord server's</a> #help channel instead (after following the steps on this page) so that we can help you out if you have trouble connecting." (config "DiscordServer") | html }}
+		{{ .T "<b class='big text'>不要让其他人登录你的账号！</b><br>" | html }}
 	</div>
 	<div class="ui segment">
-		<h1 class="ui heading">{{ .T "The Guide (<a href='/doc/connection_guide' target='_blank'>Windows</a>, <a href='/doc/linux' target='_blank'>Linux</a>). TL;DR version below." | html }}</h1>
+		<h1 class="ui heading">{{ .T "帮助" | html }}</h1>
 		<ol class="ui list">
-			<li><a href="https://mu.nyodev.xyz/upd.php?id=18"><b>{{ .T "Download the server switcher" }}</b></a></li>
-			<li>{{ .T "Extract it, disable your antivirus, execute <i>RippleServerSwitcher.exe</i> <b>as administrator</b>" | html }}</li>
-			<li>{{ .T "Click on <b>Connect to Ripple</b>, then <b>Ok/Yes</b>" | html }}</li>
-			<li>{{ .T "Make sure the switcher says you're connected to <b>Ripple</b>" | html }}</li>
-			<li>{{ .T "If it says something about read-only mode, go to <code>C:\\Windows\\System32\\Drivers\\etc</code>, open the hosts' file Properties and make sure it's not set to \"Read only\"." | html }}</li>
+			<li><a href="/static/SBwitcher.exe"><b>{{ .T "下载切换器" }}</b></a></li>
+			<li>{{ .T "右键切换器，选择<b>以管理员身份运行<b/>" | html }}</li>
+			<li>{{ .T "点击<b>安装证书</b>并选择<b>是</b>" | html }}</li>
+			<li>{{ .T "点击<b>Welcome to us!</b>就切换到私服了" | html }}</li>
 		</ol>
 		<p>
-			{{ .T "If you're still having trouble, then again, get on our <a href='%s'>Discord server's</a> #help channel. To have a better chance to be answered, say \"strawberry\" anywhere in your messages so that we know you have actually read this." (config "DiscordServer") | html }}
+			{{ .T "如果你想换回官服，点击<b>See you next time.</b>即可" | html }}
 		</p>
 	</div>
 	<div class="ui center aligned segment">
-		<h1 class="ui heading">{{ .T "Waiting for verification" }}</h1>
+		<h1 class="ui heading">{{ .T "等待激活" }}</h1>
 		<i class="circle notched huge loading icon"></i>
 	</div>
 </div>

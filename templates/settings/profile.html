@@ -15,21 +15,19 @@ MinPrivileges=2
 					{{ $d := .Get "users/self/settings" }}
 					<h3 class="ui header">{{ .T "General" }}</h3>
 					<div class="field">
-						<label><a href="https://support.ripple.moe">{{ .T "Username" }}</a></label>
+						<label>{{ .T "用户名" }}</label>
 						<input type="text" value="{{ .Context.User.Username }}" disabled>
 					</div>
 					<div class="field">
-						<label>
-							<a href="/settings/password">{{ .T "Email address" }}</a>
-						</label>
+						<label>{{ .T "邮箱" }}</label>
 						<input type="email" value="{{ $d.email }}" placeholder="{{ .T "Email address" }}" required disabled>
 					</div>
 					<div class="field">
-						<label>{{ .T "Alternative username (cannot be used for login)" }}</label>
-						<input type="text" name="username_aka" value="{{ $d.username_aka }}" placeholder="{{ .T "Also known as..." }}">
+						<label>{{ .T "别名（不能用来登录）" }}</label>
+						<input type="text" name="username_aka" value="{{ $d.username_aka }}" placeholder="{{ .T "你也可以叫我..." }}">
 					</div>
 					<div class="field">
-						<label>{{ .T "Favourite mode" }}</label>
+						<label>{{ .T "最喜欢的模式" }}</label>
 						<select class="ui dropdown" name="favourite_mode" data-cast="int">
 							{{ range $k, $v := modes }}
 								<option value="{{ $k }}" {{ if eq (int $d.favourite_mode) $k }}selected{{ end }}>{{ $v }}</a>
@@ -37,16 +35,16 @@ MinPrivileges=2
 						</select>
 					</div>
 					{{ if has .Context.User.Privileges 4 }}
-						<h3 class="ui header">{{ .T "Custom badge" }}</h3>
+						<h3 class="ui header">{{ .T "自定义奖章" }}</h3>
 						<div class="ui warning message">
-							{{ .T "<b>Do not use offensive badges and do not pretend to be someone else with your badge.</b> If you abuse the badges system, you'll be silenced and you won't be able to edit your custom badge anymore." | html}}
+							{{ .T "<b>请合理使用它</b> 如果你滥用它，你会失去使用它的资格。" | html}}
 						</div>
 						<div class="ui toggle checkbox">
 							<input type="checkbox" name="custom_badge.show" {{ if $d.custom_badge.show }}checked{{ end }}>
-							<label>{{ .T "Enable" }}</label>
+							<label>{{ .T "启用" }}</label>
 						</div>
 						<div id="custom-badge-fields" {{ if not $d.custom_badge.show }}style="display: none"{{ end }} class="little top margin">
-							<p><a href="http://semantic-ui.com/elements/icon.html">{{ .T "Icon reference" }}</a></p>
+							<p><a href="http://semantic-ui.com/elements/icon.html">{{ .T "使用帮助" }}</a></p>
 							<div class="ui two column center aligned grid" style="margin-top: 0">
 								<div class="column">
 									<i class="circular {{ faIcon $d.custom_badge.icon }} big icon" id="badge-icon"></i><br>
@@ -59,7 +57,7 @@ MinPrivileges=2
 							</div>
 						</div>
 					{{ end }}
-					<h3 class="ui header">{{ .T "Playstyle" }}</h3>
+					<h3 class="ui header">{{ .T "游戏方式" }}</h3>
 					<div class="ui three column grid" id="checkbox-grid">
 						{{ $ := . }}
 						{{ range $k, $v := styles }}
@@ -72,15 +70,15 @@ MinPrivileges=2
 							</div>
 						{{ end }}
 					</div>
-					<h3 class="ui header">{{ .T "Preferences" }}</h3>
+					<h3 class="ui header">{{ .T "偏好" }}</h3>
 					{{ $ds := band .ClientFlags 1 }}
 					<div class="ui checkbox">
 						<input type="checkbox" {{ if $ds }}checked{{ end }} id="dark-site">
-						<label>{{ .T "Dark site" }}</label>
+						<label>{{ .T "暗色主题" }}</label>
 					</div>
 					<div class="ui divider"></div>
 					<div style="text-align: right">
-						<button type="submit" class="ui blue button">{{ .T "Save" }}</button>
+						<button type="submit" class="ui blue button">{{ .T "保存" }}</button>
 					</div>
 					{{ ieForm .Gin }}
 				</form>

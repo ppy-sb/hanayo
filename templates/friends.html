@@ -8,7 +8,7 @@ KyutGrill=friends.jpg
 <div class="ui container">
 	<div class="ui segments">
 		<div class="ui segment">
-			{{ .T "On this page you can see all of your friends, and unfriend them as you see fit." }}
+			{{ .T "在这里你可以看到所有的好友" }}
 		</div>
 		<div class="ui segment">
 			{{ $ := . }}
@@ -26,7 +26,7 @@ KyutGrill=friends.jpg
 										<div class="ui compact circular smalltext icon labeled {{ if .is_mutual }}red{{ else }}green{{ end }} button"
 											data-userid="{{ .id }}">
 											<i class="{{ if .is_mutual }}heart{{ else }}minus{{ end }} icon"></i>
-											<span>{{ if .is_mutual }}{{ $.T "Mutual" }}{{ else }}{{ $.T "Remove" }}{{ end }}</span>
+											<span>{{ if .is_mutual }}{{ $.T "不MU了" }}{{ else }}{{ $.T "删除好友" }}{{ end }}</span>
 										</div>
 									</div>
 								</div>

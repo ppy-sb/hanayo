@@ -10,33 +10,16 @@ HeadingOnRight=true
 		<div class="ui segment">
 			{{ $username := .RequestInfo.Username }}
 			<img src="/static/jack_black.jpg" class="ui small right floated image" alt="Jack black">
-
-			<p>{{ .T "We see that you're trying to sign up while having already signed up as %s! Please note that multiaccounting is punishable, and can lead to a one month restriction!" $username }}</p>
-
-			<ul>
-				<li>
-					{{ .T "If you're %s, keep in mind that multiaccounting = ban." $username }}
-				</li>
-				<li>
-					{{ .T "If you're not %s, but you're using %s's computer, please sign up on Ripple from your own computer." $username $username }}
-				</li>
-				<li>
-					{{ .T "If you live with %s and you don't have your own computer from which to sign up on Ripple, then please contact support@ripple.moe, and we'll deal with your specific case." $username }}
-				</li>
-			</ul>
-			
-			<p>
-				{{ .T "This warning may pop up also if you're using another computer on the same network of %s. As long as you're not using the same computer, you should be all good." $username }}
-			</p>
+			<p>{{ .T "%s，好久不见，本服禁止小号。" $username }}</p>
 			<p style="margin-bottom:40px;">
-				<a href="/register?stopsign=1" class="camouflaged">{{ .T "If you truly have understood what's written above and you have understood that creating a multiaccount will lead to a restriction on your main account, you can click here and you'll be brought to the sign up page." }}</a> 
+				<a href="/register?stopsign=1" class="camouflaged">{{ .T "如果你想让你的账号消失，你可以继续注册" }}</a> 
 			</p>
 		</div>
 		<div class="ui right aligned segment">
 			<div class="ui buttons">
 				<a tabindex="1" class="ui labeled blue icon button" href="/">
 					<i class="left chevron icon"></i>
-					{{ .T "Bring me back to safety!" }}
+					{{ .T "我不开小号了" }}
 				</a>
 			</div>
 		</div>
