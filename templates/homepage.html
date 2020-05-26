@@ -43,6 +43,13 @@ KyutGrill=homepage2.jpg
 			<p>
 				{{ .T "群号792778662" }}
 			</p>
+			<p>
+				新user stat page（支持rx）正在制作中。⬇️是目前的测试版。欢迎提建议！<br>
+				<a href="https://ppy-sb.github.io/dist-sb-rx-stat/#/users/1001">这是arily的新userpage！快来看看吧！</a><br>
+				https://ppy-sb.github.io/dist-sb-rx-stat/#/users/{id或username}/{模式}/{rx}<br>
+				模式： "std","osu"=osu, "taiko"=taiko, "ctb","catch"=ctb, "mania"=mania<br>
+				rx: "rx"=rx, ""=classic
+			</p>
 		</div>
 	{{ else }}
 		<div class="ui segment">
@@ -70,6 +77,13 @@ KyutGrill=homepage2.jpg
 			</ul>
 			<p>
 				{{ .T "群号792778662" }}
+			</p>
+			<p>
+				新user stat page（支持rx）正在制作中。⬇️是目前的测试版。欢迎提建议！<br>
+				<a href="https://ppy-sb.github.io/dist-sb-rx-stat/#/users/{{.Context.User.ID}}">这是你的新userpage！快来看看吧！！！</a>
+				https://ppy-sb.github.io/dist-sb-rx-stat/#/users/{id或username}/{模式}/{rx}<br>
+				模式： "std","osu"=osu, "taiko"=taiko, "ctb","catch"=ctb, "mania"=mania<br>
+				rx: "rx"=rx, ""=classic
 			</p>
 		</div>
 	{{ end }}
