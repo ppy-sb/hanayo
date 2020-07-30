@@ -53,46 +53,46 @@ KyutGrill=homepage2.jpg
 				{{ end }}
 			</div>
 		</div>
+	<div class="ui segment">
 		<div class="ui segment">
-			<div class="ui segment">
-				<h1 class="ui center aligned header">
-					{{ $.T "关于 ppy.sb" | html }}
-				</h1>
-			</div>
-			<p>
-				{{ .T "被一些玩家简称屙屎国服(？)" }}
-			</p>
-			<p>
-				{{ .T "已实现功能：" }}
-			</p>
-			<ul>
-				<li>{{ .T "基于Akatsuki" }}</li>
-				<li>{{ .T "所有图都拥有排行榜和录像" }}</li>
-				<li>{{ .T "上传rx成绩和录像，以及rx排行榜" }}</li>
-				<li>{{ .T "中文ID，目前只能在游戏内自助修改" }}</li>
-				<li>{{ .T "游戏内direct下载，由Sayobot提供（老夜牛逼）" }}</li>
-				<li>{{ .T "pp排行榜（切换至mod榜即可）" }}</li>
-				<li>{{ .T "围观、多人游戏、好友..." }}</li>
-			</ul>
-			<p>
-				{{ .T "计划中功能：" }}
-			</p>
-			<ul>
-				<li>{{ .T "qq群bot联动" }}</li>
-			</ul>
-			{{ if not .Context.User.ID }}
-				<p>
-					全新前端正在开发。迫不及待了吗？
-					⬇️是目前的开发版本。欢迎提建议！<br>
-					<a href="https://next.ppy.sb/users/1001">这是 arily 的新 userpage！快来看看吧！</a><br>
-				</p>
-			{{ else }}
-				<p>
-					全新前端正在开发。迫不及待了吗？
-					⬇️是目前的开发版本。欢迎提建议！<br>
-					<a href="https://next.ppy.sb/users/{{.Context.User.ID}}">你的新 userpage！快来看看吧！</a>
-				</p>
-			{{ end }}
+			<h1 class="ui center aligned header">
+				{{ $.T "关于 ppy.sb" | html }}
+			</h1>
 		</div>
+		<p>
+			{{ .T "被一些玩家简称屙屎国服(？)" }}
+		</p>
+		<p>
+			{{ .T "已实现功能：" }}
+		</p>
+		<ul>
+			<li>{{ .T "基于Akatsuki" }}</li>
+			<li>{{ .T "所有图都拥有排行榜和录像" }}</li>
+			<li>{{ .T "上传rx成绩和录像，以及rx排行榜" }}</li>
+			<li>{{ .T "中文ID，目前只能在游戏内自助修改" }}</li>
+			<li>{{ .T "游戏内direct下载，由Sayobot提供（老夜牛逼）" }}</li>
+			<li>{{ .T "pp排行榜（切换至mod榜即可）" }}</li>
+			<li>{{ .T "围观、多人游戏、好友..." }}</li>
+		</ul>
+		<p>
+			{{ .T "计划中功能：" }}
+		</p>
+		<ul>
+			<li>{{ .T "qq群bot联动" }}</li>
+		</ul>
+		{{ if not .Context.User.ID }}
+			<p>
+				全新前端正在开发。迫不及待了吗？
+				⬇️是目前的开发版本。欢迎提建议！<br>
+				<a href="https://next.ppy.sb/users/1001">这是 arily 的新 userpage！快来看看吧！</a><br>
+			</p>
+		{{ else }}
+			<p>
+				全新前端正在开发。迫不及待了吗？
+				⬇️是目前的开发版本。欢迎提建议！<br>
+				<a href="https://next.ppy.sb/users/{{.Context.User.ID}}">你的新 userpage！快来看看吧！</a>
+			</p>
+		{{ end }}
+	</div>
 </div>
 {{ end }}
