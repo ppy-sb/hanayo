@@ -18,11 +18,11 @@ KyutGrill=homepage2.jpg
 		<div class="ui raised segment">
 			{{ if not .Context.User.ID }}
 				<h1 class="ui header">{{ .T "欢迎来到 ppy.sb" }}</h1>
-				{{ .T "欢迎！中国大陆首个支持 Relax 排行榜的私服。我们现在拥有 <b>%s 位在线玩家以及 %s 位注册用户。</b>还在等什么？加入我们吧！" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
+				{{ .T "欢迎！首个支持 UTF-8 字符的 Relax 私服。还在等什么？加入我们吧！" }}
 			{{ else }}
 				<h1 class="ui header">{{ .T "你好你好，%s!" .Context.User.Username }}</h1>
 				<p>
-					{{ .T "欢迎回来！我们现在拥有 <b>%s 位在线玩家以及 %s 位注册用户。</b>美好的一天从刷 PP 开始，不是吗？" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
+					{{ .T "欢迎回来！美好的一天从刷 PP 开始，不是吗？" }}
 				</p>
 			{{ end }}
 			<div class="ui center aligned basic segment">
@@ -46,10 +46,6 @@ KyutGrill=homepage2.jpg
 						<i class="sign in icon"></i>
 						{{ $.T "登陆" }}
 					</a>
-				<a class="ui pink button" href="https://osu.ppy.sb/static/SBwitcher.exe">
-					<i class="download icon"></i>
-					{{ $.T "下载切换器" }}
-				</a>
 				{{ end }}
 			</div>
 		</div>
@@ -59,9 +55,6 @@ KyutGrill=homepage2.jpg
 				{{ $.T "关于 ppy.sb" | html }}
 			</h1>
 		</div>
-		<p>
-			{{ .T "被一些玩家简称屙屎国服(？)" }}
-		</p>
 		<p>
 			{{ .T "已实现功能：" }}
 		</p>
