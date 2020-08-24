@@ -76,15 +76,13 @@ KyutGrill=homepage2.jpg
 				</ul>
 				{{ if not .Context.User.ID }}
 					<p>
-						全新前端正在开发。迫不及待了吗？
-						⬇️是目前的开发版本。欢迎提建议！<br>
-						<a href="https://next.ppy.sb/users/1001">这是 arily 的新 userpage！快来看看吧！</a><br>
+						全新前端正在开发。迫不及待了吗？⬇️是目前的开发版本。欢迎提建议！<br>
+						<a href="https://next.ppy.sb/users/1001">这是 arily 的新用户页！快来看看吧！</a><br>
 					</p>
 				{{ else }}
 					<p>
-						全新前端正在开发。迫不及待了吗？
-						⬇️是目前的开发版本。欢迎提建议！<br>
-						<a href="https://next.ppy.sb/users/{{.Context.User.ID}}">你的新 userpage！快来看看吧！</a>
+						全新前端正在开发。迫不及待了吗？⬇️是目前的开发版本。欢迎提建议！<br>
+						<a href="https://next.ppy.sb/users/{{.Context.User.ID}}">你的新用户页！快来看看吧！</a>
 					</p>
 				{{ end }}
 			</div>
