@@ -15,77 +15,84 @@ KyutGrill=homepage2.jpg
 		</div>
 	{{ end }}
 	{{/* Not logged in block */}}
-	{{ if not .Context.User.ID }}
-		<div class="ui segment">
-			<h1 class="ui header">{{ .T "欢迎来到ppy.sb" }}</h1>
-			<p>
-				{{ .T "？屙屎国服" }}
-			</p>
-			<p>
-				{{ .T "已实现功能：" }}
-			</p>
-			<ul>
-				<li>{{ .T "基于Akatsuki" }}</li>
-				<li>{{ .T "使用阿里云提供的优质土豆" }}</li>
-				<li>{{ .T "所有图都拥有排行榜和录像" }}</li>
-				<li>{{ .T "上传rx成绩和录像，以及rx排行榜" }}</li>
-				<li>{{ .T "中文ID，目前只能在游戏内自助修改" }}</li>
-				<li>{{ .T "游戏内direct下载，由Sayobot提供（老夜牛逼）" }}</li>
-				<li>{{ .T "pp排行榜（切换至mod榜即可）" }}</li>
-				<li>{{ .T "围观、多人游戏、好友..." }}</li>
-			</ul>
-			<p>
-				{{ .T "计划中功能：" }}
-			</p>
-			<ul>
-				<li>{{ .T "qq群bot联动" }}</li>
-			</ul>
-			<p>
-				{{ .T "群号792778662" }}
-			</p>
-			<p>
-				新user stat page（支持rx）正在制作中。⬇️是目前的测试版。欢迎提建议！<br>
-				<a href="https://ppy-sb.github.io/dist-sb-rx-stat/#/users/1001">这是arily的新userpage！快来看看吧！</a><br>
-				https://ppy-sb.github.io/dist-sb-rx-stat/#/users/{id或username}/{模式}/{rx}<br>
-				模式： "std","osu"=osu, "taiko"=taiko, "ctb","catch"=ctb, "mania"=mania<br>
-				rx: "rx"=rx, ""=classic
-			</p>
+		<div class="ui raised segment">
+			{{ if not .Context.User.ID }}
+				<h1 class="ui header">{{ .T "欢迎来到 ppy.sb" }}</h1>
+				{{ .T "欢迎！中国大陆首个支持 Relax 排行榜的私服。我们现在拥有 <b>%s 位在线玩家以及 %s 位注册用户。</b>还在等什么？加入我们吧！" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
+			{{ else }}
+				<h1 class="ui header">{{ .T "你好你好，%s!" .Context.User.Username }}</h1>
+				<p>
+					{{ .T "欢迎回来！我们现在拥有 <b>%s 位在线玩家以及 %s 位注册用户。</b>美好的一天从刷 PP 开始，不是吗？" (rediget "ripple:online_users") (rediget "ripple:registered_users") | html }}
+				</p>
+			{{ end }}
+			<div class="ui center aligned basic segment">
+				{{ if not .Context.User.ID }}
+					<a class="ui pink button" href="/register">
+						<i class="plus square icon"></i>
+						{{ $.T "注册" }}
+					</a>
+				{{ end }}
+				<a class="ui pink button" href="https://osu.ppy.sb/static/SBwitcher.exe">
+					<i class="download icon"></i>
+					{{ $.T "下载切换器" }}
+				</a>
+				{{ if .Context.User.ID }}
+					<a class="ui pink inverted button" href="/doc/connection_guide">
+						<i class="book icon"></i>
+						{{ $.T "链接指南" }}
+					</a>
+				{{ else }}
+					<a class="ui pink button" href="/login">
+						<i class="sign in icon"></i>
+						{{ $.T "登陆" }}
+					</a>
+				<a class="ui pink button" href="https://osu.ppy.sb/static/SBwitcher.exe">
+					<i class="download icon"></i>
+					{{ $.T "下载切换器" }}
+				</a>
+				{{ end }}
+			</div>
 		</div>
-	{{ else }}
+	<div class="ui segment">
 		<div class="ui segment">
-			<h1 class="ui header">{{ .T "你好你好，%s!" .Context.User.Username }}</h1>
-			<p>
-				{{ .T "欢迎回来！" }}
-			</p>
-			<p><a href="https://shimo.im/docs/HV3pJjyQpDgtk9TW/">批发商使用说明</a></p>
-			<p>
-				{{ .T "已实现功能：" }}
-			</p>
-			<ul>
-				<li>{{ .T "所有图都拥有排行榜和录像" }}</li>
-				<li>{{ .T "上传rx成绩和录像，以及rx排行榜" }}</li>
-				<li>{{ .T "中文ID，目前只能在游戏内自助修改" }}</li>
-				<li>{{ .T "游戏内direct下载，由Sayobot提供（老夜牛逼）" }}</li>
-				<li>{{ .T "pp排行榜（切换至mod榜即可）" }}</li>
-				<li>{{ .T "围观、多人游戏、好友..." }}</li>
-			</ul>
-			<p>
-				{{ .T "计划中功能：" }}
-			</p>
-			<ul>
-				<li>{{ .T "qq群bot联动" }}</li>
-			</ul>
-			<p>
-				{{ .T "群号792778662" }}
-			</p>
-			<p>
-				新user stat page（支持rx）正在制作中。⬇️是目前的测试版。欢迎提建议！<br>
-				<a href="https://ppy-sb.github.io/dist-sb-rx-stat/#/users/{{.Context.User.ID}}">这是你的新userpage！快来看看吧！！！</a>
-				https://ppy-sb.github.io/dist-sb-rx-stat/#/users/{id或username}/{模式}/{rx}<br>
-				模式： "std","osu"=osu, "taiko"=taiko, "ctb","catch"=ctb, "mania"=mania<br>
-				rx: "rx"=rx, ""=classic
-			</p>
+			<h1 class="ui center aligned header">
+				{{ $.T "关于 ppy.sb" | html }}
+			</h1>
 		</div>
-	{{ end }}
+		<p>
+			{{ .T "被一些玩家简称屙屎国服(？)" }}
+		</p>
+		<p>
+			{{ .T "已实现功能：" }}
+		</p>
+		<ul>
+			<li>{{ .T "基于Akatsuki" }}</li>
+			<li>{{ .T "所有图都拥有排行榜和录像" }}</li>
+			<li>{{ .T "上传rx成绩和录像，以及rx排行榜" }}</li>
+			<li>{{ .T "中文ID，目前只能在游戏内自助修改" }}</li>
+			<li>{{ .T "游戏内direct下载，由Sayobot提供（老夜牛逼）" }}</li>
+			<li>{{ .T "pp排行榜（切换至mod榜即可）" }}</li>
+			<li>{{ .T "围观、多人游戏、好友..." }}</li>
+		</ul>
+		<p>
+			{{ .T "计划中功能：" }}
+		</p>
+		<ul>
+			<li>{{ .T "qq群bot联动" }}</li>
+		</ul>
+		{{ if not .Context.User.ID }}
+			<p>
+				全新前端正在开发。迫不及待了吗？
+				⬇️是目前的开发版本。欢迎提建议！<br>
+				<a href="https://next.ppy.sb/users/1001">这是 arily 的新 userpage！快来看看吧！</a><br>
+			</p>
+		{{ else }}
+			<p>
+				全新前端正在开发。迫不及待了吗？
+				⬇️是目前的开发版本。欢迎提建议！<br>
+				<a href="https://next.ppy.sb/users/{{.Context.User.ID}}">你的新 userpage！快来看看吧！</a>
+			</p>
+		{{ end }}
+	</div>
 </div>
 {{ end }}

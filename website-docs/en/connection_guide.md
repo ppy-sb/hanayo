@@ -1,28 +1,28 @@
 ---
-title: "How to connect to Ripple"
+title: "如何连接到 ppy.sb"
 old_id: 1
 ---
-- [Register](http://ripple.moe/index.php?p=3) an account  
-- Download the [Ripple server switcher](https://mu.nyodev.xyz/upd.php?id=18)
-- **Extract** the archive somewhere (eg: in a folder on your desktop)  
-- **Turn off your antivirus** (some antiviruses might cause some issues)  
+- [注册](http://osu.ppy.sb/register)一个账号
+- 下载 [ppy.sb 服务器切换器]()
+- 放到任何一个你喜欢的地方 （比如桌面的某个文件夹里）
+- **关闭杀毒软件**（没有这步也可以，有些防毒会误报）
 
 
-### How to play on Ripple
-- Run `RippleServerSwitcher.exe` **as administrator**  
-- Click on **Switch to Ripple**  
-- If there are some dialogs about intalling the HTTPs certificate, always click on **Ok/Yes**. The HTTPs certificate is needed to properly connect to ripple  
-- Make sure that the switcher says **You are connected to Ripple**  
-- Open osu! and login with your Ripple account  
-- Enjoy  
-_NOTE: If you can't install the certificate through the automatic procedure, follow [these instructions](https://ripple.moe/index.php?p=16&id=12) to install it manually._  
+### 进入 ppy.sb
+- **以管理员**启动 `SBwitcher.exe`
+- 点击 **Welcome to us**
+- 如果弹出有关安装 HTTPs 证书的对话框，请一路**确定**。必须需要 HTTPs 证书才能正确连接到 ppy.sb
+- 确保切换器显示 **欢迎来到 ppy.sb**
+- 打开你的 osu! 然后登陆 ppy.sb 账号
+- 玩的开心
+_请注意：如果你无法自动安装证书，请加群询问。_
 
-### How to play on official osu! again
-- Make sure osu! is **closed**  
-- Open the switcher and click **Switch to osu!**  
-- Make sure the switcher says **You are connected to osu!**  
-- Open osu! and login with your osu! account  
-_NOTE: If you want to connect to osu!'s website and you see ripple's website or an error, even if the switcher claims you're connected to osu!, empty your browser cache and restart your browser._  
+### 如何回到 Bancho（官方 osu! 服务器）
+- 确保 osu! 是**关闭**的
+- 打开切换器并点击 **See u next time.**
+- 确保切换器显示 **你怎么还在 Bancho**
+- 再次打开 osu! 并登陆 Bancho 账号
+_请注意：如果你已经切换回了 Bancho，但是网站仍然是 ppy.sb。请清除浏览器缓存并刷新页面。_
 
-### Having troubles?
-Check out our [FAQ](https://ripple.moe/doc/5)
+### 还有问题？
+加群联系我们！
