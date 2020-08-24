@@ -3,7 +3,7 @@ title: "如何连接到 ppy.sb"
 old_id: 1
 ---
 - [注册](http://osu.ppy.sb/register)一个账号
-- 下载 [ppy.sb 服务器切换器]()
+- 下载 [ppy.sb 服务器切换器](https://osu.ppy.sb/static/SBwitcher.exe)
 - 放到任何一个你喜欢的地方 （比如桌面的某个文件夹里）
 - **关闭杀毒软件**（没有这步也可以，有些防毒会误报）
 
